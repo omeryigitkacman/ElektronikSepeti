@@ -1,0 +1,44 @@
+
+<div class="d-flex justify-content-center align-items-center">
+    <div style="flex-wrap: wrap !important;" class="d-flex align-items-center cont">
+        <%result.forEach((e)=>{%>
+            <div class="con-product-all">
+                <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+                    <img data-toggle="modal" data-target=".bd-example-modal-xl" onclick="getdetails(<%- e.id%>)" class="product-Img"  src="<%-e.urunımage%>" alt=":(" />
+                </div>
+                <p class="product-Title">
+                    <div class="text-center">
+                        <%- e.urunname%>
+                    </div>
+                    <div class="text-muted">
+                        <%- e.markaname%>
+                    </div>
+                    <div class="">
+
+                    </div>
+                </p>
+                <h5 class="product-Price"><%- e.urunprice%> TL</h5>
+                <button onclick="addvalat(<%- e.id%>)" class="btn-sepete-ekle"><i class="fa-solid fa-cart-shopping mr-2"></i> Sepete Ekle</button>
+            </div>
+        <%})%>
+</div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        slidesPerGroup: 1,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    
+
+</script>

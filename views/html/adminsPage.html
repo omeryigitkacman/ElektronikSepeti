@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Admin Paneli</title>
+  </head>
+  <body>
+    <div class="admin-all-con-extra">
+      <div class="admin-menu">
+        <ul>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" class="admin-menu-link">
+              <i class="fa-solid fa-house"></i>
+              Anasayfa
+              <i class="fa-solid fa-angle-right admin-menu-effect-icon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="admin-home">
+        <table
+          class="table table-borderless"
+          style="text-align: center; width: 1000px; background-color: #ddd"
+        >
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Ad Soyad</th>
+              <th>Sipariş Miktarı</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Abdulkadir Şahin</td>
+              <td>7</td>
+              <td>kadirbaban@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Abdulkadir Şahin</td>
+              <td>7</td>
+              <td>kadirbaban@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Abdulkadir Şahin</td>
+              <td>7</td>
+              <td>kadirbaban@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Abdulkadir Şahin</td>
+              <td>7</td>
+              <td>kadirbaban@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Abdulkadir Şahin</td>
+              <td>7</td>
+              <td>kadirbaban@gmail.com</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Abdulkadir Şahin</td>
+              <td>7</td>
+              <td>kadirbaban@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      //Aadmin sayfasındaki menünün listlelerinin olayları BAŞLAR
+      var adminMenuLink = document.querySelectorAll(".admin-menu-link");
+      adminMenuLink.forEach((e) => {
+        var adminMenuIcon = e.querySelector(".admin-menu-effect-icon");
+        e.addEventListener("mouseenter", () => {
+          adminMenuIcon.style.transform = "translate(0%, 0%) scale(1)";
+        });
+        e.addEventListener("mouseleave", () => {
+          adminMenuIcon.style.transform = "translate(0%, 0%) scale(0)";
+        });
+      });
+      //Aadmin sayfasındaki menünün listlelerinin olayları BİTER
+    </script>
+  </body>
+</html>

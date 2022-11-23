@@ -1,0 +1,150 @@
+<div class="d-flex justify-content-center align-items-center flex-column w-100">
+    <img src="/images/sadasdas.jpg">
+    <div class="swiper mySwiper pb-2 w-100">
+        <h3 class="m-4">Telefonlar</h3>
+        <div class="swiper-wrapper">
+            <%result.forEach((e)=>{%>
+                <div class="swiper-slide d-flex justify-content-center ">
+                    <div class="con-product-all">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+                            <img data-toggle="modal" data-target=".bd-example-modal-xl" onclick="getdetails(<%- e.id%>)"
+                                class="product-Img" src="<%-e.urunımage%>" alt=":(" />
+                        </div>
+                        <p class="product-Title">
+                        <div class="text-center">
+                            <%- e.urunname%>
+                        </div>
+                        <div class="text-muted">
+                            <%- e.markaname%>
+                        </div>
+                        <div class="">
+
+                        </div>
+                        </p>
+                        <h5 class="product-Price">
+                            <%- e.para%> TL
+                        </h5>
+                        <button onclick="addvalat(<%- e.id%>)" class="btn-sepete-ekle"><i
+                                class="fa-solid fa-cart-shopping mr-2"></i> Sepete Ekle</button>
+                    </div>
+                </div>
+                <%})%>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div class="swiper mySwiper mt-5  w-100">
+        <h3 class="m-4">Bilgisayarlar</h3>
+        <div class="swiper-wrapper">
+            <%resultpc.forEach((e)=>{%>
+                <div class="swiper-slide d-flex justify-content-center">
+                    <div class="con-product-all">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+                            <img data-toggle="modal" data-target=".bd-example-modal-xl" onclick="getdetails(<%- e.id%>)"
+                                class="product-Img" src="<%-e.urunımage%>" alt=":(" />
+                        </div>
+                        <p class="product-Title">
+                        <div class="text-center">
+                            <%- e.urunname%>
+                        </div>
+                        <div class="text-muted">
+                            <%- e.markaname%>
+                        </div>
+                        <div class="">
+
+                        </div>
+                        </p>
+                        <h5 class="product-Price">
+                            <%- e.para%> TL
+                        </h5>
+                        <button onclick="addvalat(<%- e.id%>)" class="btn-sepete-ekle"><i
+                                class="fa-solid fa-cart-shopping mr-2"></i> Sepete Ekle</button>
+                    </div>
+                </div>
+                <%})%>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div class="swiper mySwiper mt-5  w-100">
+        <h3 class="m-4">Beyaz Eşya</h3>
+        <div class="swiper-wrapper">
+            <%resultbeyaz.forEach((e)=>{%>
+                <div class="swiper-slide d-flex justify-content-center">
+                    <div class="con-product-all">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+                            <img data-toggle="modal" data-target=".bd-example-modal-xl" onclick="getdetails(<%- e.id%>)"
+                                class="product-Img" src="<%-e.urunımage%>" alt=":(" />
+                        </div>
+                        <p class="product-Title">
+                        <div class="text-center">
+                            <%- e.urunname%>
+                        </div>
+                        <div class="text-muted">
+                            <%- e.markaname%>
+                        </div>
+                        <div class="">
+
+                        </div>
+                        </p>
+                        <h5 class="product-Price">
+                            <%- e.para%> TL
+                        </h5>
+                        <button onclick="addvalat(<%- e.id%>)" class="btn-sepete-ekle"><i
+                                class="fa-solid fa-cart-shopping mr-2"></i> Sepete Ekle</button>
+                    </div>
+                </div>
+                <%})%>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+
+        breakpoints: {
+            // when window width is >= 480px
+            500: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                slidesPerGroup: 1,
+            },
+            700: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                slidesPerGroup: 2,
+            },
+            1000: {
+                slidesPerView: 3,
+                spaceBetween: 0,
+                slidesPerGroup: 3,
+            },
+            // when window width is >= 640px
+            1300: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+                slidesPerGroup: 4,
+            },
+            1820: {
+                slidesPerView: 5,
+                spaceBetween: 0,
+                slidesPerGroup: 5,
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+
+</script>

@@ -1,0 +1,27 @@
+    <div class="con-home d-flex">
+        <%- include('adminnav'); -%>
+        <form action="/admin/markaekle" enctype="multipart/form-data"  style="height: 800px !important; flex-direction: row;" class="d-flex justify-content-center ml-5 form-login w-100 aligin-items-center"  method="post">
+          <div class="user-photo mr-5">
+            <div class="chard-photo">
+              <img style="height: auto; border-radius: 10px;" src="" class="img-les" alt="">
+            </div>
+          </div>
+          <div class="user-inputs">
+            <div class="users-ex">
+              <div class="login-inps">
+                <label for="email">Marka Adı</label>
+                <input id="ccn" required type="tel" name="markaname"  class="txtmarka"  maxlength="19" >
+              </div>
+              <div class="login-inps">
+                <label for="markaImage">Marka Resimi</label>
+                <input id="ccn" required type="file"  name="markaImagePath" class="txtmarkaresim"  maxlength="19"  >
+              </div>
+              <div class="login-sub-btn">
+                  <button>Ekle</button>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+
+  <script src="./assets/main.js"></script>

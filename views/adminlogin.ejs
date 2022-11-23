@@ -1,0 +1,25 @@
+<div class="all-con-extra">
+    <div class="con-home">
+      <div class="home">
+        <form action="/admin"  method="post" class="d-flex justify-content-center form-login aligin-items-center"  >
+            <% if(sessionFlash) {%>
+                <div class="<%=sessionFlash.type %>">
+                    <%=sessionFlash.message %>
+                </div>
+                <%}%>
+          <h2>Admin Giriş</h2>
+          <div class="login-inps">
+            <label for="email">Email</label>
+            <input required type="email" name="email" id="">
+          </div>
+          <div class="login-inps">
+            <label for="paas">Şifre</label>
+            <input required type="password" name="paas" id="">
+          </div>
+          <div class="login-sub-btn">
+              <button>Giriş</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

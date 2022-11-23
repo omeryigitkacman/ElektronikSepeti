@@ -1,0 +1,121 @@
+<nav class="all-nav-bar">
+  <a class="all-nav-header" href="/">
+    <h3>Elektronik Sepeti</h3>
+  </a>
+  <form action="/arama" method="get">
+    <div class="nbc-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="asddd" name="arama" type="text">
+      <button class="btn-sr">Ara</button>
+    </div>
+  </form>
+  <ul class="sed">
+    <li><a href="/">Ana Sayfa</a></li>
+    <li><a href="/iletisim">İletişim</a></li>
+    <% if(locals.adminlogin==true){%>
+      <li><a href="/admin">Admin Ana Sayfa</a></li>
+      <%}%>
+        <% if(displayLink==false){ %>
+          <li><a href="/giris">Giriş Yap</a></li>
+          <li><a href="/kayit">Kayıt Ol</a></li>
+          <% } else { %>
+            <li><a href="/sepetim">Sepetim</a></li>
+            <div class="sdes">
+              <li class="list-Hesabim">
+                <i class="fa-solid fa-user"></i>
+                <span>
+                  <%=locals.username %>
+                </span>
+              </li>
+              <div class="list-menu" style="position: absolute">
+                <i style="
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            color: rgb(83, 83, 83);
+            font-size: 20px;
+          " class="fa-solid fa-circle-xmark hesabimMenuKapamaIcon"></i>
+                <ul>
+                  <% if(adminlogin!=true) {%>
+                    <li>
+                      <a href="/sparislerim"> Siparişlerim </a>
+                    </li>
+                    <li>
+                      <a href="/kullanicibilgilerim"> Kullanıcı Bilgilerim </a>
+                    </li>
+                    <%}%>
+                      <li>
+                        <a href="/cikisyap">
+                          Çıkış Yap
+                          <i style="margin-left: 10px" class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </a>
+                      </li>
+                </ul>
+              </div>
+            </div>
+            <% } %>
+  </ul>
+</nav>
+<% if(locals.adminlogin!=true) {%>
+<div>
+  <ul class="d-flex justify-content-center align-items-center asd">
+    <li><a href="/tumurunler">Tüm Ürünler</a></li>
+    <li><a href="/urunbilgilendirme">Ürün Bilgilendirme</a></li>
+  </ul>
+</div>
+<%}%>
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+
+    <div class="modal-content">
+      <div class="modal-header w-100">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-content ">
+        <div class="w-100 d-flex align-items-center asd-mod  h-100">
+          <div class="modal-img w-50 h-100 d-flex justify-content-center align-items-center">
+            <img class="imgurunimg" src="/images/download.jpg">
+          </div>
+          <input type="hidden" class="txtids">
+          <div class="urun-bil p-3 w-50 h-100">
+            <div class="urun-name h4">
+              iMac
+            </div>
+            <div class="urun-marka text-muted d-flex align-items-center">
+              <img  width="30" class="mr-1 imgmarkaimg" src="/markaImages/Apple_logo_black.svg.png" alt=""> <span class="txtmarka">Apple</span>
+            </div>
+            <div class="urun-as mt-1 text-muted">
+              Renk: <span class="txtrenk"></span>
+            </div>
+            <div class="text-muted">
+              Garanti Süresi: <span class="txtgaranti"></span>
+            </div>
+            <div class="urun-as mt-1 text-muted">
+              Kategori: <span class="txtkategori"></span>
+            </div>
+            <div class="urun-ozellik">
+              <div class="h5 mt-5">Ürün Özellikleri</div>
+              <div class="txturunprop">
+                4 adet performans çekirdeğine ve 4 adet verimlilik çekirdeğine sahip 8 çekirdekli CPU
+                7 çekirdekli GPU
+                16 çekirdekli Neural Engine
+              </div>
+              <div class="to-order mt-3">
+                <div>
+                  <div class="h4 txturunprice">19.999,99 TL</div>
+                  <div class="mt-3"><button class="tosa p-3"> <i class="fa-solid fa-cart-shopping mr-2"></i> Sepete Ekle</button></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

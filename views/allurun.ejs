@@ -1,0 +1,85 @@
+<div class="d-flex asdee justify-content-center">
+    <form action="/tumurunler">
+    <div class="bg-light conta p-4">
+        <div>
+            <div class="login-inps">
+                <label for="marka">Marka</label>
+                <select name="urunmarka"  class="form-select">
+                  <option selected class="kesl" value="-1" >Boş</option>
+                  <%resultmarka.forEach((e)=>{%>
+                      <%if(sonfiltremarka==e.id) {%>
+                      <option selected class="kesl" value="<%- e.id %>" ><%- e.markaname%></option>
+                    <%}else{%>
+                      <option class="kesl" value="<%- e.id %>" ><%- e.markaname%></option>
+                    <%}%>
+                    <%})%>
+                </select>
+              </div>
+        </div>
+        <div>
+            <div class="login-inps">
+                <label for="kategori">Kategori</label>
+                <select  name="urunkategori" >
+                  <option selected class="kesl" value="-1" >Boş</option>
+                  <%resultkategori.forEach((e)=>{%>
+                    <%if(e.id==sonfiltrekategori) {%>
+                      <option selected class="kesl" value="<%- e.id %>" ><%- e.KategoriName%></option>
+                    <%}else{%>
+                      <option class="kesl" value="<%- e.id %>" ><%- e.KategoriName%></option>
+                      <%}%>
+                    <%})%>
+                </select>
+              </div>
+        </div>
+        <div>
+
+        </div>
+        <button class="btndes">Filtrele</button>
+    </form>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div style="flex-wrap: wrap !important;" class="d-flex align-items-center cont">
+            <%result.forEach((e)=>{%>
+                <div class="con-product-all">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+                        <img data-toggle="modal" data-target=".bd-example-modal-xl" onclick="getdetails(<%- e.id%>)" class="product-Img"  src="<%-e.urunımage%>" alt=":(" />
+                    </div>
+                    <p class="product-Title">
+                        <div class="text-center">
+                            <%- e.urunname%>
+                        </div>
+                        <div class="text-muted">
+                            <%- e.markaname%>
+                        </div>
+                        <div class="">
+    
+                        </div>
+                    </p>
+                    <h5 class="product-Price"><%- e.urunprice%> TL</h5>
+                    <button onclick="addvalat(<%- e.id%>)" class="btn-sepete-ekle"><i class="fa-solid fa-cart-shopping mr-2"></i> Sepete Ekle</button>
+                </div>
+            <%})%>
+    </div>
+    </div>
+</div>
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        slidesPerGroup: 1,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    
+
+</script>

@@ -1,0 +1,38 @@
+<% if(sessionFlash) {%>
+  <div class="<%=sessionFlash.type %>">
+      <%=sessionFlash.message %>
+  </div>
+  <%}%>
+<div class="home">
+    <form action="/kullanicibilgilerim" style="height: 800px !important; flex-direction: row;" class="d-flex cons-d justify-content-center form-login aligin-items-center"  method="post">
+      <div class="user-photo mr-5">
+        <div class="user-photo-radius">
+          <img src="/images/default-user-image.png" alt="">
+        </div>
+      </div>
+      <div class="user-inputs">
+        <div class="users-ex">
+          <div class="login-inps">
+            <label for="email">Ad</label>
+            <input required type="text" value="<%= result.firstname%>" name="firstname" id="">
+          </div>
+          <div class="login-inps">
+            <label for="email">Soyad</label>
+            <input required type="text" value="<%= result.lastname%>" name="lastname" id="">
+          </div>
+          <div class="login-inps">
+            <label for="email">Email</label>
+            <input required type="email" name="email" value="<%= result.email%>" id="">
+          </div>
+          <div class="login-inps">
+            <label for="paas">Şifre</label>
+            <input type="password" name="paas" id="">
+            <input type="hidden" name="hiddenpas" value="<%= result.password%>" id="">
+          </div>
+          <div class="login-sub-btn">
+              <button>Değiştir</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

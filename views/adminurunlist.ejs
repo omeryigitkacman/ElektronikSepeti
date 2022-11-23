@@ -1,0 +1,63 @@
+<div class="admin-all-con-extra">
+    <%- include('adminnav'); -%>
+      <div class="admin-home">
+        <% if(sessionFlash) {%>
+          <div class="<%=sessionFlash.type %>">
+              <%=sessionFlash.message %>
+          </div>
+          <%}%>
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <h3 class="m-4">Ürün</h3>
+            <a href="/admin/urunekle" class="btn btn-info mr-5 text-white"> <i class="fa-solid fa-plus mr-1"></i> Yeni Ürün Ekle</a>
+          </div>
+          <table class="table">
+              <thead>
+                  <tr scope="row">
+                      <td class="align-middle">Id</td>
+                      <td class="align-middle">Urun Resim</td>
+                      <td class="align-middle">Urun Model</td>
+                      <td class="align-middle">Urun Fiyatı</td>
+                      <td class="align-middle">Urun Stok</td>
+                      <td class="align-middle">Marka Id</td>
+                      <td class="align-middle">Kategori Id</td>
+                      <td class="align-middle">Urun Garanti</td>
+                      <td class="align-middle">Urun Renk</td>
+                      <td class="align-middle">Güncelle</td>
+                      <td class="align-middle">Sil</td>
+                  </tr>
+              </thead>
+              <tbody>
+                <% result.forEach(urun => { %>
+                  <tr class="das">
+                    <td class="align-middle"><%- urun.id%></td>
+                    <td class="align-middle"><img src="<%- urun.urunımage%>" width="100" alt=""></td>
+                    <td class="align-middle"><%-urun.urunname%></td>
+                    <td class="align-middle"><%-urun.urunprice%></td>
+                    <td class="align-middle"><%-urun.urunstock%></td>
+                    <td class="align-middle"><%-urun.marka_id%></td>
+                    <td class="align-middle"><%-urun.kategori_id%></td>
+                    <td class="align-middle"><%-urun.urungaranti%></td>
+                    <td class="align-middle"><%-urun.urunrenk%></td>
+                    <td class="align-middle"><a href="/admin/urungucelle/<%- urun.id%>" class="btn-primary btngüncels" >Güncelle</button></td>
+                    <td class="align-middle"><a href="/admin/urunsil/<%- urun.id%>" class="btn-danger btngüncels">Sil</button></td>
+                </tr>
+                 <% }) %>
+                
+          </table>
+      </div>
+    </div>
+  
+    <script>
+      //Aadmin sayfasındaki menünün listlelerinin olayları BAŞLAR
+      var adminMenuLink = document.querySelectorAll(".admin-menu-link");
+      adminMenuLink.forEach((e) => {
+        var adminMenuIcon = e.querySelector(".admin-menu-effect-icon");
+        e.addEventListener("mouseenter", () => {
+          adminMenuIcon.style.transform = "translate(0%, 0%) scale(1)";
+        });
+        e.addEventListener("mouseleave", () => {
+          adminMenuIcon.style.transform = "translate(0%, 0%) scale(0)";
+        });
+      });
+      //Aadmin sayfasındaki menünün listlelerinin olayları BİTER
+    </script>

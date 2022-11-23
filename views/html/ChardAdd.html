@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Elektronik Sepeti</title>
+  </head>
+  <body>
+    <div class="all-con-extra">
+      <div class="con-home">
+        <div class="all-nav-bar">
+          <a href="#Home">
+            <h3>Elektronik Sepeti</h3>
+          </a>
+
+          <input type="text" />
+        </div>
+        <div class="home">
+          <form action="/login" style="height: 800px !important; flex-direction: row;" class="d-flex justify-content-center form-login aligin-items-center"  method="post">
+            <div class="user-photo mr-5">
+              <div class="chard-photo">
+                <img src="/images/b85e2b5a-9e91-458c-8ba3-11297ac31510 (1).svg" alt="">
+              </div>
+            </div>
+            <div class="user-inputs">
+              <div class="users-ex">
+                <div class="login-inps">
+                  <label for="email">Kart Numarası</label>
+                  <input id="ccn" type="tel"  class="txtcredychard"  maxlength="19"  placeholder="xxxx xxxx xxxx xxxx">
+                </div>
+                <div class="login-inps-ds d-flex justify-content-between">
+                  <div>
+                    <label>Kart Son Kullanım Tarihi</label>
+                    <div>
+                      <input class="last-use-inp" required type="number" placeholder="AA"  max="2" name="email" id="" >
+                      <label class="last-use-label">/</label>
+                      <input class="last-use-inp" required type="number" placeholder="YY"  name="email"  max="2" id="" >
+                    </div>
+                  </div>
+                  <div>
+                    <label>CVV</label>
+                    <div>
+                      <input class="last-use-inp" required type="number" placeholder="AA"  max="2" name="email" id="" >
+                    </div>
+                  </div>
+                </div>
+                <div class="login-sub-btn">
+                    <button>Ekle</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/main.js"></script>
+  </body>
+</html>

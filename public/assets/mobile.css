@@ -1,0 +1,86 @@
+@media only screen and (max-width: 600px) {
+    .all-nav-header h3 {
+        font-size: 10px !important;
+    }
+
+    .asddd {
+        width: 50px !important;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    .all-nav-header h3 {
+        font-size: 30px !important;
+    }
+
+    .asddd {
+        width: 200px !important;
+        font-size: 14px !important;
+    }
+
+    .asddd {
+        font-size: 10px;
+    }
+
+    .sed {
+        font-size: 10px !important;
+    }
+
+    .btn-sr {
+        font-size: 14px !important;
+    }
+
+    .imgurunimg {
+        width: 200px;
+    }
+
+    .all-nav-bar {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .all-nav-header h3 {
+        font-size: 15px !important;
+    }
+
+    .sed {
+        white-space: nowrap;
+        font-size: 10px !important;
+    }
+
+    .asdee {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cont {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cons-d {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .form-login input {
+        width:400px !important;
+    }
+    .user-inputs
+    {
+    }
+    .daes
+    {
+        flex-direction: column-reverse !important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .form-login input {
+        width:250px !important;
+    }
+
+}

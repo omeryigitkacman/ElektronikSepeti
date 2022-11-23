@@ -1,0 +1,48 @@
+<div class="admin-all-con-extra">
+      <div class="admin-home">
+        <% if(sessionFlash) {%>
+          <div class="<%=sessionFlash.type %>">
+              <%=sessionFlash.message %>
+          </div>
+          <%}%>
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <h3 class="m-4">Sparişlerim</h3>
+          </div>
+          <table class="table">
+              <thead>
+                  <tr scope="row">
+                      <td class="align-middle">Ürun Resim</td>
+                      <td class="align-middle">Ürun Model</td>
+                      <td class="align-middle">Ürun Fiyatı</td>
+                      <td class="align-middle">Kargo Durumu</td>
+                  </tr>
+              </thead>
+              <tbody>
+                <% result.forEach(urun => { %>
+                    <tr class="das">
+                      <td class="align-middle"><img src="<%- urun.urunımage%>" width="100" alt=""></td>
+                      <td class="align-middle"><%-urun.urunname%></td>
+                      <td class="align-middle"><%-urun.price%> TL</td>
+                      <td class="align-middle">Kargo Hazırlanıyor</td>
+                  </tr>
+                   <% }) %>
+              </tbody>
+                
+          </table>
+      </div>
+    </div>
+  
+    <script>
+      //Aadmin sayfasındaki menünün listlelerinin olayları BAŞLAR
+      var adminMenuLink = document.querySelectorAll(".admin-menu-link");
+      adminMenuLink.forEach((e) => {
+        var adminMenuIcon = e.querySelector(".admin-menu-effect-icon");
+        e.addEventListener("mouseenter", () => {
+          adminMenuIcon.style.transform = "translate(0%, 0%) scale(1)";
+        });
+        e.addEventListener("mouseleave", () => {
+          adminMenuIcon.style.transform = "translate(0%, 0%) scale(0)";
+        });
+      });
+      //Aadmin sayfasındaki menünün listlelerinin olayları BİTER
+    </script>

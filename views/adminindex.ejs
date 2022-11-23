@@ -1,0 +1,51 @@
+<div class="admin-all-con-extra">
+  <%- include('adminnav'); -%>
+    <div class="admin-home">
+      <% if(sessionFlash) {%>
+        <div class="<%=sessionFlash.type %>">
+            <%=sessionFlash.message %>
+        </div>
+        <%}%>
+        <h3 class="m-4">Kullanıcılar</h3>
+        <table class="table">
+            <thead>
+                <tr scope="row">
+                    <td>Id</td>
+                    <td>Ad</td>
+                    <td>Soyad</td>
+                    <td>Email</td>
+                    <td>Güncelle</td>
+                    <td>Sil</td>
+                </tr>
+            </thead>
+            <tbody>
+
+              <% result.forEach(user => { %>
+                <tr class="das">
+                  <td><%- user.id%></td>
+                  <td><%- user.firstname%></td>
+                  <td><%- user.lastname%></td>
+                  <td class="user-email"><%- user.email%></td>
+                  <td><a href="/admin/kullaniciguncelle/<%- user.id%>" class="btn-primary btngüncel" >Güncelle</button></td>
+                  <td><a href="/admin/kullanicisil/<%- user.id%>" class="btn-danger btngüncel">Sil</button></td>
+              </tr>
+               <% }) %>
+              
+        </table>
+    </div>
+  </div>
+
+  <script>
+    //Aadmin sayfasındaki menünün listlelerinin olayları BAŞLAR
+    var adminMenuLink = document.querySelectorAll(".admin-menu-link");
+    adminMenuLink.forEach((e) => {
+      var adminMenuIcon = e.querySelector(".admin-menu-effect-icon");
+      e.addEventListener("mouseenter", () => {
+        adminMenuIcon.style.transform = "translate(0%, 0%) scale(1)";
+      });
+      e.addEventListener("mouseleave", () => {
+        adminMenuIcon.style.transform = "translate(0%, 0%) scale(0)";
+      });
+    });
+    //Aadmin sayfasındaki menünün listlelerinin olayları BİTER
+  </script>

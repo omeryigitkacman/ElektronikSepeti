@@ -1,0 +1,18 @@
+    <div class="con-home d-flex">
+        <%- include('adminnav'); -%>
+        <form action="/admin/kategoriguncelle/<%=result.id%>" enctype="multipart/form-data"  style="height: 800px !important; flex-direction: row;" class="d-flex justify-content-center form-login w-100 aligin-items-center"  method="post">
+          <div class="user-inputs">
+            <div class="users-ex">
+              <div class="login-inps">
+                <label for="email">Kategori İsim</label>
+                <input id="ccn" required type="tel" name="kategorianame" value="<%=result.KategoriName%>"  class="txtkategori"  maxlength="19" >
+              </div>
+              <div class="login-sub-btn">
+                  <button>Ekle</button>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+
+  <script src="./assets/main.js"></script>

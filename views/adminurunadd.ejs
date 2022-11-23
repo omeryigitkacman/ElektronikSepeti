@@ -1,0 +1,65 @@
+    <div class="con-home d-flex">
+        <%- include('adminnav'); -%>
+        <form action="/admin/urunekle" enctype="multipart/form-data"  style="height: 1000px !important; flex-direction: row;" class="d-flex justify-content-center form-login w-100 aligin-items-start"  method="post">
+          <div class="user-photo mr-5">
+            <div class="chard-photo-s">
+              <img style="height: auto; border-radius: 10px; width: 500px !important";" src="" class="img-les" alt="">
+            </div>
+          </div>
+          <div class="user-inputs">
+            <div class="users-ex">
+              <div class="login-inps">
+                <label for="ürünadı">Ürün Model</label>
+                <input id="ccn" required type="tel" name="urunmodel"  class="txtmarka"  >
+              </div>
+              <div class="login-inps">
+                <label for="ürünfiyat">Ürün Fiyatı (TL)</label>
+                <input id="ccn" required type="number" name="urunfiyat" min="0.00" step="0.01"  class="txtmarka"  >
+              </div>
+              <div class="login-inps">
+                <label for="ürünstok">Ürün Stoğu</label>
+                <input id="ccn" required type="number" name="urunstock"  class="txtmarka"  >
+              </div>
+              <div class="login-inps">
+                <label for="ürünstok">Ürün Renk</label>
+                <input id="ccn" required type="text" name="urunrenk"  class="txtmarka"   >
+              </div>
+              <div class="login-inps">
+                <label for="ürünstok">Ürün Garanti</label>
+                <input id="ccn" required type="number" name="urungaranti"  class="txtmarka"   >
+              </div>
+              <div class="login-inps">
+                <label for="marka">Marka</label>
+                <select name="urunmarka" class="form-select">
+                  <%resultmarka.forEach((e)=>{%>
+                    <option class="kesl" value="<%- e.id %>" >
+                      <%- e.markaname%></option>
+                    <%})%>
+                </select>
+              </div>
+              <div class="login-inps">
+                <label for="kategori">Kategori</label>
+                <select name="urunkategori">
+                  <%resultkategori.forEach((e)=>{%>
+                    <option class="kesl" value="<%- e.id %>" >
+                      <%- e.KategoriName%></option>
+                    <%})%>
+                </select>
+              </div>
+              <div class="login-inps">
+                <label for="markaImage">Ürün Resimi</label>
+                <input id="ccn" required type="file"  name="urunImagePath" class="txtmarkaresim"   >
+              </div>
+              <div class="login-inps">
+                <label for="markaImage">Ürün Not</label>
+                <textarea id="ccn" required type="file"  name="urunnot" class="txtmarkaresim"   ></textarea>
+              </div>
+              <div class="login-sub-btn">
+                  <button>Ekle</button>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+
+  <script src="./assets/main.js"></script>

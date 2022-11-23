@@ -1,0 +1,84 @@
+<div class="admin-all-con-extra">
+  <div class="admin-home">
+    <% if(sessionFlash) {%>
+      <div class="<%=sessionFlash.type %>">
+        <%=sessionFlash.message %>
+      </div>
+      <%}%>
+        <div class="d-flex justify-content-between w-100 align-items-center pl-5">
+          <h3 class="m-4">Sepetim</h3>
+        </div>
+        <div class="pl-5 d-flex w-100 align-items-start">
+          <table class="table w-50">
+            <thead>
+              <tr scope="row">
+                <td>Ürün Adı</td>
+                <td>Ürün Model</td>
+                <td>Ürün Marka</td>
+                <td>Fiyat</td>
+                <td>Sepetten Çıkar</td>
+              </tr>
+            </thead>
+            <tbody>
+              <% result.forEach(e=> { %>
+                <tr class="das">
+                  <td class="align-middle"><img width="100" src="<%- e.urunımage%>" alt=""></td>
+                  <td class="align-middle">
+                    <%- e.urunname%>
+                  </td>
+                  <td class="align-middle" style="white-space: nowrap;"><img width="30" src="<%- e.markaImage%>" alt="">
+                    <%- e.markaname%>
+                  </td>
+                  <td class="align-middle" style="white-space: nowrap;">
+                    <%- e.price%> TL
+                  </td>
+                  <td class="align-middle"><a href="/sepetsil/<%- e.sepetid%>" class="btn-danger btngünce"><i
+                        class="fa-solid fa-trash-can"></i></button></td>
+                </tr>
+                <% }) %>
+          </table>
+          <div class="bg-light p-4 ml-5 sed d-flex flex-column justify-content-start align-items-start" style="width: 500px;">
+            <h3 class="mb-4">Toplam Fiyat</h3>
+            <% result.forEach(e=> { %>
+              <div class="w-100 d-flex mt-2 justify-content-between ">
+                <div class="text-muted demo-2">
+                  <%- e.urunname%>
+                </div>
+                <div class="text-muted">
+                  <%- e.price%> TL
+                </div>
+              </div>
+              <% }) %>
+            <div class="rs-e w-100 mt-3 mt-1" ></div>
+            <div class="w-100 d-flex mt-3 justify-content-between">
+              <div class="text-muted">
+                Toplam
+              </div>
+              <div class="text-muted">
+                <%= toplammoney.toplamfiyat%> TL
+              </div>
+              
+            </div>
+            <div class="btn-es w-100 d-flex justify-content-center mt-3">
+              <a href="/sparisitamamla" class="btns">
+                Sparişi Tamamla</a>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+<script>
+  //Aadmin sayfasındaki menünün listlelerinin olayları BAŞLAR
+  var adminMenuLink = document.querySelectorAll(".admin-menu-link");
+  adminMenuLink.forEach((e) => {
+    var adminMenuIcon = e.querySelector(".admin-menu-effect-icon");
+    e.addEventListener("mouseenter", () => {
+      adminMenuIcon.style.transform = "translate(0%, 0%) scale(1)";
+    });
+    e.addEventListener("mouseleave", () => {
+      adminMenuIcon.style.transform = "translate(0%, 0%) scale(0)";
+    });
+  });
+      //Aadmin sayfasındaki menünün listlelerinin olayları BİTER
+</script>
